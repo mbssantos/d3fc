@@ -1,4 +1,4 @@
-// Can' use export * from 'package' with rollup for some reason at the moment
+// Can't use export * from 'package' with rollup for some reason at the moment
 // See https://github.com/rollup/rollup/issues/791
 export * from './node_modules/d3fc-technical-indicator/index';
 export * from './node_modules/d3fc-discontinuous-scale/index';
