@@ -9,6 +9,7 @@
     "space-before-function-paren": [2, "never"],
     "padded-blocks": 0,
     "no-multi-spaces": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "quotes": 0
   }
 }

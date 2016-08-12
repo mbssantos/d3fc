@@ -56,6 +56,7 @@
     "rollup": "^0.34.1",
     "rollup-plugin-babel": "^2.4.0",
     "simple-markdown": "^0.1.1",
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.6.2",
+    "xregexp": "^3.1.1"
   }
 }

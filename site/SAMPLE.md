@@ -12,6 +12,8 @@ npm install d3fc-data-join
 
 # API
 
+About to show some sik API stuff
+
 ## General API
 
 The data-join component is a relatively leightweight Wrapper around d3's selectAll/data data-join, which allows decoration of the result. This is achieved by appending the element to the enter selection before exposing it. A default transition of fade in/out is also implicitly added but can be modified.
