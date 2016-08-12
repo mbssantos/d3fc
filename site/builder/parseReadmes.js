@@ -1,6 +1,3 @@
-import { parserFor, htmlFor, ruleOutput } from 'simple-markdown';
-import XRegExp from 'xregexp';
-
 const any = '\\n|\\r|.';
 const title = `(.+)`;
 const hashes = level => Array(level).fill('#').join('');
@@ -32,13 +29,13 @@ function parseBlock(level, content, title, options) {
     return children;
   } else {
     const block = {
+      title,
+      level: level - 1,
       content: (
         children.length
           ? content.substr(0, firstChildIndex)
           : content
-      ).replace(new RegExp(`${hashes(level - 1)} ${title}(\n|\r)+`), ''),
-      level: level - 1,
-      title
+      ).replace(new RegExp(`${hashes(level - 1)} ${title}(\n|\r)+`), '')
     };
     if (children.length) {
       block.children = children;
@@ -48,7 +45,8 @@ function parseBlock(level, content, title, options) {
 }
 
 function parseReadme(readme) {
-  return parseBlock(1, readme.contents, null, { maxDepth: 2 });
+  readme.structure = parseBlock(1, readme.contents, null, { maxDepth: 2 });
+  return readme;
 }
 
 export default (readmes) =>

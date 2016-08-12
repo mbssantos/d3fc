@@ -28,6 +28,7 @@ export default () =>
 
       return Promise
         .all(readPromises)
+        .then(readmes => { console.log('DONE FETCHING'); return readmes; })
         .then(resolve)
         .catch(reject);
     });

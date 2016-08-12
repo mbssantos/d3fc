@@ -5,7 +5,7 @@
   "main": "build/d3fc.js",
   "scripts": {
     "bundle": "rimraf build && rollup -c && uglifyjs build/d3fc.js --compress --mangle -o build/d3fc.min.js",
-    "site": "npm-run-all site:build",
+    "site": "npm-run-all site:clean site:build",
     "site:build": "babel-node site/builder/build.js",
     "site:clean": "rimraf site/dist && mkdirp site/dist"
   },
@@ -51,12 +51,11 @@
     "gray-matter": "^2.0.2",
     "handlebars": "^4.0.5",
     "jasmine": "^2.4.1",
+    "js-yaml": "^3.6.1",
     "npm-run-all": "^2.3.0",
     "rimraf": "^2.5.4",
     "rollup": "^0.34.1",
     "rollup-plugin-babel": "^2.4.0",
-    "simple-markdown": "^0.1.1",
-    "uglify-js": "^2.6.2",
-    "xregexp": "^3.1.1"
+    "uglify-js": "^2.6.2"
   }
 }
