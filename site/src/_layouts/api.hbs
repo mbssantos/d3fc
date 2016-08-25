@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="container">
+  {{#each structure}}
+  <h{{level}}>
+{{title}}
+  </h{{level}}>
+    {{#markdown this}}
+  {{{content}}}
+    {{/markdown}}
+    {{#each children}}
+      <h{{level}}>
+{{title}}
+      </h{{level}}>
+      {{#markdown this}}
+{{{content}}}
+      {{/markdown}}
+    {{/each}}
+  {{/each}}
+</div>
