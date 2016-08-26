@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: random-data-api
+name: random-data-api
 structure:
   - title: d3fc-random-data
     level: 1
@@ -430,5 +428,8 @@ structure:
           The first array value is the supplied start price, followed by *steps*
           number of values corresponding to the simulated price value at the end
           of each step.
+layout: api
+section: api
+title: Random Data
 
 ---

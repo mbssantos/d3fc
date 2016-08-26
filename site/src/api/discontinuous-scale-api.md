@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: discontinuous-scale-api
+name: discontinuous-scale-api
 structure:
   - title: d3fc-discontinuous-scale
     level: 1
@@ -196,5 +194,8 @@ structure:
            discontinuities.
            + `offset` - When given a value and an offset, the value should be advanced by the offset value, skipping any discontinuities, to return the final value.
            + `copy` - Creates a copy of the discontinuity provider.
+layout: api
+section: api
+title: Discontinuous Scale
 
 ---

@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: rebind-api
+name: rebind-api
 structure:
   - title: d3fc-rebind
     level: 1
@@ -75,5 +73,8 @@ structure:
 
 
           Prefix all property names with `str`.
+layout: api
+section: api
+title: Rebind
 
 ---

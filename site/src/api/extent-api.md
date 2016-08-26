@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: extent-api
+name: extent-api
 structure:
   - title: d3fc-extent
     level: 1
@@ -231,5 +229,8 @@ structure:
 
           If *values* is not specified, returns the current array of included
           values, which defaults `[]`.
+layout: api
+section: api
+title: Extent
 
 ---

@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: data-join-api
+name: data-join-api
 structure:
   - title: d3fc-data-join
     level: 1
@@ -114,5 +112,8 @@ structure:
 
 
           Specifies the key function used by the data join.
+layout: api
+section: api
+title: Data Join
 
 ---

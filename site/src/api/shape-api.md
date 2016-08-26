@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: shape-api
+name: shape-api
 structure:
   - title: d3fc-shape
     level: 1
@@ -259,5 +257,8 @@ structure:
 
 
           Orientation of the chart. Either `horizontal` (default) or `vertical`
+layout: api
+section: api
+title: Shape
 
 ---

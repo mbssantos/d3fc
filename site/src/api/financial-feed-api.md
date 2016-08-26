@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: financial-feed-api
+name: financial-feed-api
 structure:
   - title: d3fc-financial-feed
     level: 1
@@ -278,5 +276,8 @@ structure:
           properties for all non-null names mapped by
           *feedQuandl*.columnNameMap, with date column values converted to
           `Date` instances.
+layout: api
+section: api
+title: Financial Feed
 
 ---

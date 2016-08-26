@@ -32,6 +32,7 @@
   "homepage": "https://github.com/d3fc/d3fc#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "change-case": "^3.0.0",
     "d3fc-data-join": "^2.0.0",
     "d3fc-discontinuous-scale": "^2.0.0",
     "d3fc-extent": "^2.2.0",

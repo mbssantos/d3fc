@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: technical-indicator-api
+name: technical-indicator-api
 structure:
   - title: d3fc-technical-indicator
     level: 1
@@ -480,5 +478,8 @@ structure:
 
           Computes an array of stochastic oscillator values from the given input
           array.
+layout: api
+section: api
+title: Technical Indicator
 
 ---

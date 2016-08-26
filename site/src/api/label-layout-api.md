@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: label-layout-api
+name: label-layout-api
 structure:
   - title: d3fc-label-layout
     level: 1
@@ -259,5 +257,8 @@ structure:
 
 
           Specifies the text rendered by this label as an accessor function.
+layout: api
+section: api
+title: Label Layout
 
 ---

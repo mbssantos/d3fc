@@ -1,7 +1,5 @@
 ---
-layout: api
-section: api
-title: sample-api
+name: sample-api
 structure:
   - title: d3fc-sample
     level: 1
@@ -213,5 +211,8 @@ structure:
           ]
 
           ```
+layout: api
+section: api
+title: Sample
 
 ---
