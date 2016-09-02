@@ -10,6 +10,7 @@ import fetchReadmes from './fetchReadmes';
 import parseReadmes from './parseReadmes';
 import filterReadmes from './filterReadmes';
 import markdownSerialize from './markdownSerialize';
+import copyReadmeAssets from './copyReadmeAssets';
 
 var resolveExternals = require('./resolveExternals');
 var createComponentNavigation = require('./createComponentNavigation');
@@ -87,7 +88,8 @@ function build(config) {
           renderTemplate,
           renderMarkdown,
           renderLayout,
-          writePost(config.destinationFolder)
+          writePost(config.destinationFolder),
+          copyReadmeAssets
         ]);
       });
     })
