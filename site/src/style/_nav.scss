@@ -4,9 +4,8 @@
 }
 
 .nav-stacked > li {
-
 	h4 {
-		color: @brand-primary;
+		color: $brand-primary;
 		margin-top: 15px;
 		margin-bottom: 5px;
 	}
@@ -18,17 +17,17 @@
 	}
 
 	> a {
-		color: @brand-primary;
+		color: $brand-primary;
 
 		&:hover {
 			background: none;
-			color: @brand-secondary;
+			color: $brand-secondary;
 		}
 	}
 
 	.nav-stacked > li > a  {
 		padding: 0 0 0 15px;
-		font-size: @font-size-small;
+		font-size: $font-size-small;
 		text-transform: none;
 	}
 }

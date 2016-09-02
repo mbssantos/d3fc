@@ -3,24 +3,17 @@ svg {
 }
 
 .content {
-	background: @brand-offwhite;
+	background: $brand-offwhite;
 }
 
 .navbar-logo {
-	@padding: 10px;
-	margin: @padding 0;
-	height: @navbar-height - 2 * @padding;
+	$padding: 10px;
+	margin: $padding 0;
+	height: $navbar-height - 2 * $padding;
 }
 
 .navbar-nav {
 	text-transform: uppercase;
-}
-
-.section(@content-padding: 0) {
-	padding-top: @section-vertical-padding - @content-padding;
-	padding-bottom: @section-vertical-padding - @content-padding;
-	margin-top: 0;
-	margin-bottom: 0;
 }
 
 h1 {
@@ -29,14 +22,14 @@ h1 {
 }
 
 footer {
-	background: @brand-background;
+	background: $brand-background;
 	color: white;
 
 	a {
 		color: white;
 
 		&:hover {
-			color: @gray-lighter;
+			color: $gray-lighter;
 		}
 	}
 
@@ -53,7 +46,7 @@ footer {
 		width: 80px;
 
 		&:hover {
-			background-color: @gray-lighter;
+			background-color: $gray-lighter;
 		}
 	}
 

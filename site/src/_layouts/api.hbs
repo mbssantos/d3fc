@@ -5,20 +5,22 @@ layout: default
 <div class="container project">
   <div class="col-sm-9">
     {{#each structure}}
-      <h{{level}}>
-{{title}}
-      </h{{level}}>
-      {{#markdown this}}
-{{{content}}}
-      {{/markdown}}
-      {{#each children}}
+      <div class="section">
         <h{{level}}>
 {{title}}
         </h{{level}}>
         {{#markdown this}}
 {{{content}}}
         {{/markdown}}
-      {{/each}}
+        {{#each children}}
+          <h{{level}}>
+{{title}}
+          </h{{level}}>
+          {{#markdown this}}
+{{{content}}}
+          {{/markdown}}
+        {{/each}}
+      </div>
     {{/each}}
   </div>
 

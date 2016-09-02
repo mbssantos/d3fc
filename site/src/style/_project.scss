@@ -1,0 +1,9 @@
+@import 'variables';
+
+.project {
+	padding-bottom: $section-vertical-padding;
+
+	.section {
+		padding-bottom: $section-vertical-padding;
+	}
+}
