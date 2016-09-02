@@ -1,3 +1,5 @@
+import changeCase from 'change-case';
+
 const any = '\\n|\\r|.';
 const title = `(.+)`;
 const hashes = level => Array(level).fill('#').join('');
@@ -44,8 +46,20 @@ function parseBlock(level, content, title, options) {
   }
 }
 
+function getContents(readme) {
+  try {
+    return readme.structure[0].children[1].children || [];
+  } catch (e) {
+    return [];
+  }
+}
+
 function parseReadme(readme) {
-  readme.structure = parseBlock(1, readme.contents, null, { maxDepth: 2 });
+  readme.structure = parseBlock(1, readme.contents, null, { maxDepth: 3 });
+  readme.sidebarContents = getContents(readme).map(block => ({
+    title: block.title,
+    id: changeCase.paramCase(block.title)
+  }));
   return readme;
 }
 

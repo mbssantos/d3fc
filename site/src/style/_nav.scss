@@ -3,22 +3,24 @@
 	margin-left: 30px;
 }
 
-.nav-stacked > li {
-	h4 {
-		color: $brand-primary;
-		margin-top: 15px;
-		margin-bottom: 5px;
-	}
+.navbar-nav {
+	font-size: $font-size-small;
+}
 
+.nav-stacked > li {
 	&.active {
 		a {
 			font-weight: bold;
 		}
 	}
 
-	> a {
+	> a, > span {
 		color: $brand-primary;
-
+		&.active {
+			font-weight: bold;
+		}
+	}
+	> a {
 		&:hover {
 			background: none;
 			color: $brand-secondary;

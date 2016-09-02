@@ -26,7 +26,8 @@ export default (readmes) =>
       section: 'api',
       name: readme.name,
       title: toTitle(readme.name),
-      structure: readme.structure
+      structure: readme.structure,
+      sidebarContents: readme.sidebarContents
     }));
 
     const writePromises = readmes.map(readme =>

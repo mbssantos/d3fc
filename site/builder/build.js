@@ -44,6 +44,7 @@ require('./handlebars-helpers/escape').register(handlebars);
 require('./handlebars-helpers/codeblock').register(handlebars);
 require('./handlebars-helpers/markdown').register(handlebars);
 require('./handlebars-helpers/first').register(handlebars);
+require('./handlebars-helpers/paramcase').register(handlebars);
 require('./handlebars-helpers/json').register(handlebars);
 require('./handlebars-helpers/hyperlink').register(handlebars);
 
@@ -76,7 +77,6 @@ function build(config) {
     addGlobalData({'chart-css': chartStyle})
   ])
     .then(function(globalData) {
-      console.log(globalData);
       return mapFiles(config.filePattern, function(file, filePath) {
         return chainPromises(matter(file), [
           mergeGlobalData(globalData),
