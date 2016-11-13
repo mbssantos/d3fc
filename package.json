@@ -52,7 +52,7 @@
     "d3fc-shape": "^4.0.0",
     "d3fc-technical-indicator": "^6.0.0",
     "highlight.js": "^9.8.0",
-    "node-sass": "^3.11.1",
+    "node-sass": "^3.12.0",
     "tiny-ssg": "github:colineberhardt/tiny-ssg#v0.0.6"
   },
   "devDependencies": {
