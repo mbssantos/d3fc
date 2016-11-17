@@ -63,6 +63,7 @@
     "copyfiles": "^1.0.0",
     "d3-svg-legend": "^2.18.0",
     "d3fc-scripts": "^1.6.2",
+    "d3-svg-legend": "^2.16.0",
     "fs-promise": "^1.0.0",
     "glob": "^7.1.1",
     "gray-matter": "^2.1.0",
