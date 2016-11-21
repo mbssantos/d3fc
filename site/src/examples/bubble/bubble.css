@@ -1,0 +1,19 @@
+#bubble-chart {
+	margin: 0;
+	height: 300px;
+}
+
+svg.legend-container {
+	right: 10px;
+	bottom: 15px;
+	height: 100px;
+	width: 165px;
+	left: auto;
+	top: auto;
+}
+
+text.label {
+  stroke: none;
+  fill: #000;
+  font: 12px sans-serif;
+}

@@ -44,6 +44,7 @@ d3.json('https://d3fc.io/examples/bubble/data.json', function(error, data) {
         .decorate(function(selection) {
           selection.enter() // functions chained after enter are only called once
             .select('.plot-area')
+            .attr('class', 'background')
             .append('svg')  // append an svg so d3-legend renders rects correctly
             .attr('class', 'legend-container');  // add class for positioning
 
@@ -51,7 +52,7 @@ d3.json('https://d3fc.io/examples/bubble/data.json', function(error, data) {
           selection.select('svg.legend-container').call(legend);
         });
 
-    d3.select('#bubble-chart svg')
+    d3.select('#bubble-chart')
         .text(null) // Remove the loading text from the container
         .datum(data)
         .call(chart);
