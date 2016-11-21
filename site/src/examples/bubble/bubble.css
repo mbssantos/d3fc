@@ -1,11 +1,17 @@
-.legend-container {
+#bubble-chart .legend-container {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 200px;
-  height: 120px;
+  width: 170px;
+  height: 110px;
 }
 
-.point {
+#bubble-chart .point {
   stroke: transparent;
+}
+
+#bubble-chart text.label {
+  stroke: none;
+  fill: #000;
+  font: 12px sans-serif;
 }

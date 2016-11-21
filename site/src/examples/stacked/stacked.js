@@ -1,85 +1,69 @@
-d3.csv('https://d3fc.io/examples/stacked/data.csv', (error, data) => {
-  if (error) {
-    return;
-  }
+d3.csv('https://d3fc.io/examples/stacked/data.csv', function (error, data) {
+
   // manipulate the data into stacked series
-  const spread = fc.group()
-    .key('Country');
-  const stackLayout = d3.stack()
-    .keys(c => {
-      return c.map(d => d.key);
-    })
-    .value((v, key) => {
-      console.log(v, key, v[key]);
-      return v;
+  var stack = d3.stack().keys(Object.keys(data[0]).filter(function (k) { return k !== 'Country'; }));
+  var series = stack(data);
+
+  var color = d3.scaleOrdinal(d3.schemeCategory20)
+    .domain(series.map(function (s) {
+      return s.key;
+    }));
+
+  var legend = d3.legendColor()
+    .shapeWidth(80)
+    .orient('horizontal')
+    .scale(color);
+
+  var barSeries = fc.seriesSvgBar()
+    .orient('horizontal')
+    .crossValue(function (d) { return d.data.Country; })
+    .mainValue(function (d) { return d[1]; })
+    .baseValue(function (d) { return d[0]; });
+
+  var multi = fc.seriesSvgMulti()
+    .mapping(function (data, series, index) { return data[index]; })
+    .series(series.map(function () { return barSeries; }))
+    .decorate(function (selection) {
+      selection.each(function(data, index, nodes) {
+        d3.select(this).selectAll('g.bar').attr("fill", color(series[index].key));
+      });
     });
 
-  const series = stackLayout(spread(data));
+  var xExtent = fc.extentLinear()
+    .accessors([function (a) {
+      return a.map(function (d) { return d[1]; })
+    }])
+    .pad([0, 1])
+    .padUnit('domain')
 
-  const color = d3.schemeCategory20;
-    // .domain(series.map(s => s.key));
+  var yScale = d3.scalePoint().padding([0.5])
 
-  const yExtent = fc.extentLinear()
-    .include(0)
-    .accessors([a => a.map(d => d.y + d.y0)]);
-
-  const legend = d3.legendColor()
-    .orient('horizontal')
-    .shapeWidth(70)
-    .scale(d3.scaleOrdinal(color));
-
-  const stack = fc.seriesSvgBar()
-    .orient('horizontal')
-    .mainValue(d => d.x)
-    .crossValue(d => d.y0 + d.y)
-    // .x0Value(d => d.y0)
-    .decorate((sel, _, index) => {
-      sel.enter().attr('fill', color(series[index].key));
-    });
-
-  const chart = fc.chartSvgCartesian(
-    d3.scaleLinear(),
-    d3.scaleOrdinal()
-  )
-    .xDomain(yExtent(series.map(d => d.values)))
-    .yDomain(data.map(d => d.Country))
-    .xLabel('(million tonnes of oil equivalent)')
-    .xNice()
-    .chartLabel('2013 Energy Production')
+  var chart = fc.chartSvgCartesian(
+      d3.scaleLinear(),
+      yScale)
+    .xDomain(xExtent(series))
+    .yDomain(data.map(function (entry) {
+      return entry.Country;
+    }))
     .yOrient('left')
-    // .yTickSize(0)
-    // .margin({left: 100, bottom: 40, right: 10, top: 30})
-    .plotArea(stack)
-    .decorate(selection => {
-      // add a container for the legend
+    .xLabel('Million tonnes of oil equivalent')
+    .chartLabel('2013 Energy Production')
+    .plotArea(multi)
+    .decorate(function (selection, data, index) {
+      // append an svg for the d3-legend
       selection.enter()
-        .append('g')
-        .classed('legend-container', true)
-        .style({
-          position: 'absolute',
-          right: 10,
-          top: 40,
-          width: 358,
-          height: 36
-        });
-
-      // compute layout from the parent SVG
-      selection.enter();
+        .select('.plot-area')
+        .append('svg')
+        .attr('class', 'legend-container');
 
       // render the legend
-      selection.select('g.legend-container')
-        .style('display', function() {
-          // magic number because the legend accessors return
-          // the legend itself instead of the values (susielu/d3-legend#23)
-          const availableWidth = selection.select('.plot-area')
-          // .layout('width');
-          return availableWidth > (75 + 5) * data.length ? '' : 'none';
-        })
+      selection.select('svg.legend-container')
         .call(legend);
     });
 
-  // render
   d3.select('#stacked-chart')
+    .text(null) // Remove the loading text from the container
     .datum(series)
     .call(chart);
+
 });

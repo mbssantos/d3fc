@@ -1,3 +1,9 @@
+.chart-label {
+    font-size: 20px;
+    line-height: normal;
+    color: black;
+}
+
 .chart {
   margin: 10px 0;
   width: 100%;
