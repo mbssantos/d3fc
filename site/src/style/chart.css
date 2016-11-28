@@ -12,6 +12,7 @@
 
 .chart svg {
   overflow: visible !important;
+  shape-rendering: geometricPrecision;
 }
 
 .chart.large {
