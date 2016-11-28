@@ -10,7 +10,8 @@ layout: default
         <h{{level}}>
           {{title}}
           {{#if shouldLinkToGH }}
-            <a class="btn btn-default" href="https://github.com/d3fc/{{title}}">View on GitHub</a>
+            <a class="btn btn-default gh" href="https://github.com/d3fc/{{title}}" target="_blank" title="View on Github">&nbsp;</a>
+            <a class="btn btn-default unpkg" href="https://unpkg.com/{{title}}/build/{{title}}.min.js" title="View on Unpkg" target="_blank">&nbsp;</a>
           {{/if}}
         </h{{level}}>
         {{#markdown this}}
